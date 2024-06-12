@@ -17,9 +17,16 @@ const Login = () => {
     })
     console.log(inputValues);
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(`usuário ${inputValues.email} logado com sucesso.`)
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(inputValues)
+      })
+      console.log(response);
     navigate('/')
   }
   return(

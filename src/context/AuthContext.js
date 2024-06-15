@@ -1,10 +1,21 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 const AuthProvider = ({children}) => {
     const [userLogged, setUserLogged] = useState(false);
     const navigate = useNavigate();
+
+    useEffect (() => {
+      const userInfo = localStorage.getItem('userInfo');
+
+      if(userInfo){
+        setUserLogged(true);
+        alert('usuario logado');
+      }else{
+        alert('usuario não logado');
+      }
+    }, [])
     
 
     const loginUser = async (inputValues) =>{
@@ -15,7 +26,9 @@ const AuthProvider = ({children}) => {
             },
             body: JSON.stringify(inputValues)
           })
-          console.log(response);
+          const data = await response.json();
+          console.log(data);
+          localStorage.setItem('userInfo', JSON.stringify(data))
         navigate('/')
         setUserLogged(true);
     }

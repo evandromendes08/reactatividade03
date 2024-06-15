@@ -6,7 +6,6 @@ import { AuthContext } from '../../context/AuthContext';
 const Navbar = () => {
   const { userLogged } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(`valor do contexto`, userLogged);
 
   return (
     <header className='bg-transparent z-50 w-full'>

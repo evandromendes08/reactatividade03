@@ -11,9 +11,6 @@ const AuthProvider = ({children}) => {
 
       if(userInfo){
         setUserLogged(true);
-        alert('usuario logado');
-      }else{
-        alert('usuario não logado');
       }
     }, [])
     

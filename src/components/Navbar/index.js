@@ -34,7 +34,7 @@ const Navbar = () => {
 
               <button onClick={() => navigate('/login')} className='bg-primary px-6 text-white rounded-full transition duration-700 hover:scale-105'>Login</button>
 
-              <button onClick={() => navigate('/registro')} className='bg-primary px-6 text-white rounded-full transition duration-700 hover:scale-105'>Register</button>
+              <button onClick={() => navigate('/registro')} className='bg-primary px-6 text-white rounded-full transition duration-700 hover:scale-105'>Cadastro</button>
             
               <button onClick={() => navigate('/contato')} className='bg-primary px-6 text-white rounded-full transition duration-700 hover:scale-105'>Contato</button>
 
